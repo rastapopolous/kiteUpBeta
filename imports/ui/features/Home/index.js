@@ -1,9 +1,16 @@
 import React, { Component } from 'react'
 
+import Search from '../Search'
+import UserGrid from '../UserGrid'
+
 export default class Home extends Component {
   render () {
     return (
-      <h2>Home!</h2>
+      <div>
+        <h2>Dashboard</h2>
+        <Search />
+        <UserGrid />
+      </div>
     )
   }
 }
