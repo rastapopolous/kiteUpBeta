@@ -1,0 +1,20 @@
+{
+  "plugins": [
+    "meteor",
+    "react"
+  ],
+  "extends": [
+    "airbnb",
+    "plugin:meteor/recommended"
+  ],
+  "settings": {
+    "import/resolver": "meteor"
+  },
+  "rules": {
+    "semi": [2, "never"],
+    "react/jsx-indent": [2, 2],
+    "jsx-quotes": [2, "prefer-single"],
+    "react/prefer-stateless-function": "warn",
+    "space-before-function-paren": [2, "always"]
+  }
+}
