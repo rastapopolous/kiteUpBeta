@@ -56,7 +56,7 @@ export default class Dashboard extends Component {
       <div>
         <h2>Dashboard</h2>
         <Search
-          users={this.state.filteredUsers}
+          users={this.state.users}
           updatedFilteredUsers={this.updatedFilteredUsers} />
         <UserGrid users={this.state.filteredUsers} />
       </div>

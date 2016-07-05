@@ -25,10 +25,6 @@ export default class Search extends Component {
 
     const filteredUsers = this.filterUsers(this.props.users, this.refs.keywordInput.value)
     this.props.updatedFilteredUsers(filteredUsers)
-
-    this.setState({
-      keyword: ''
-    })
   }
 
   filterUsers (users, keyword) {
@@ -68,7 +64,7 @@ export default class Search extends Component {
           onSubmit={this.handleSubmit}>
           <input
             type='text'
-            autofocus
+            autoFocus
             value={this.state.keyword}
             ref='keywordInput'
             onChange={this.handleChange}
