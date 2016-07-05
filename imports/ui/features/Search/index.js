@@ -63,9 +63,12 @@ export default class Search extends Component {
   render () {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form
+          className='pure-form'
+          onSubmit={this.handleSubmit}>
           <input
             type='text'
+            autofocus
             value={this.state.keyword}
             ref='keywordInput'
             onChange={this.handleChange}
