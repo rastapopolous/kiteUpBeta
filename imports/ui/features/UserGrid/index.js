@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 
 export default class UserGrid extends Component {
   constructor () {
@@ -23,4 +23,8 @@ export default class UserGrid extends Component {
       </div>
     )
   }
+}
+
+UserGrid.propTypes = {
+  users: PropTypes.array.isRequired
 }

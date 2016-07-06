@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import Search from '../Search'
 import UserGrid from '../UserGrid'
 
-let users = [
+const users = [
   {
     _id: 1,
     firstname: 'Diego',
@@ -38,7 +38,7 @@ export default class Dashboard extends Component {
     super()
 
     this.state = {
-      users: users,
+      users,
       filteredUsers: users
     }
 
@@ -47,7 +47,7 @@ export default class Dashboard extends Component {
 
   updatedFilteredUsers (filteredUsers) {
     this.setState({
-      filteredUsers: filteredUsers
+      filteredUsers
     })
   }
 

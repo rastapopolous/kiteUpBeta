@@ -12,5 +12,5 @@ export default class App extends Component {
 }
 
 App.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.node
 }

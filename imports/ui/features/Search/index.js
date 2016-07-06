@@ -33,24 +33,19 @@ export default class Search extends Component {
       return users
     }
 
-    keyword = keyword.toLowerCase()
+    const lowecaseKeyword = keyword.toLowerCase()
 
     // return the filtered collection of users
-    return users.filter(function (user) {
+    return users.filter((user) => {
       let match = false
 
-      for (let key in user) {
+      Object.keys().forEach((key) => {
         let value = user[key]
         if (typeof value === 'string') {
           value = value.toLowerCase()
-          match = value.includes(keyword)
+          match = value.includes(lowecaseKeyword)
         }
-
-        // break out of for..in loop on match
-        if (match) {
-          break
-        }
-      }
+      })
 
       return match
     })
