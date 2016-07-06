@@ -39,11 +39,14 @@ export default class Search extends Component {
     return users.filter((user) => {
       let match = false
 
-      Object.keys().forEach((key) => {
-        let value = user[key]
-        if (typeof value === 'string') {
-          value = value.toLowerCase()
-          match = value.includes(lowecaseKeyword)
+      Object.keys(user).forEach((key) => {
+        if (!match) {
+          let value = user[key]
+
+          if (typeof value === 'string') {
+            value = value.toLowerCase()
+            match = value.includes(lowecaseKeyword)
+          }
         }
       })
 
