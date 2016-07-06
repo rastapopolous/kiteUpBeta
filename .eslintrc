@@ -10,6 +10,10 @@
   "settings": {
     "import/resolver": "meteor"
   },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
   "rules": {
     "semi": [2, "never"],
     "react/jsx-indent": [2, 2],
