@@ -23,7 +23,7 @@ export default class Search extends Component {
   handleSubmit (e) {
     e.preventDefault()
 
-    const filteredUsers = this.filterUsers(this.props.users, this.refs.keywordInput.value)
+    const filteredUsers = this.filterUsers(this.props.users, this.state.keyword)
     this.props.updatedFilteredUsers(filteredUsers)
   }
 
