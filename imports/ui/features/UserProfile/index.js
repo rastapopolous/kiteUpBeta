@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 
 export default class UserProfile extends Component {
 
@@ -19,14 +19,16 @@ export default class UserProfile extends Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    this.setState({
-      firstname: nextProps.user.firstname,
-      lastname: nextProps.user.lastname,
-      province: nextProps.user.province,
-      city: nextProps.user.city,
-      phone: nextProps.user.phone,
-      skill: nextProps.user.skill
-    })
+    if (nextProps.user) {
+      this.setState({
+        firstname: nextProps.user.firstname,
+        lastname: nextProps.user.lastname,
+        province: nextProps.user.province,
+        city: nextProps.user.city,
+        phone: nextProps.user.phone,
+        skill: nextProps.user.skill
+      })
+    }
   }
 
   handleChange (e) {
@@ -98,5 +100,31 @@ export default class UserProfile extends Component {
         </form>
       </div>
     )
+  }
+}
+
+UserProfile.propTypes = {
+  user: PropTypes.shape({
+    _id: PropTypes.number.isRequired,
+    firstname: PropTypes.string.isRequired,
+    lastname: PropTypes.string.isRequired,
+    city: PropTypes.string.isRequired,
+    province: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    phone: PropTypes.string.isRequired,
+    skill: PropTypes.string.isRequired
+  })
+}
+
+UserProfile.defaultProps = {
+  user: {
+    _id: 0,
+    firstname: '',
+    lastname: '',
+    city: '',
+    province: '',
+    email: '',
+    phone: '',
+    skill: ''
   }
 }
