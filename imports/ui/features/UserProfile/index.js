@@ -8,9 +8,9 @@ export default class UserProfile extends Component {
     this.state = {
       firstname: '',
       lastname: '',
-      email: '',
-      province: '',
       city: '',
+      province: '',
+      email: '',
       phone: '',
       skill: ''
     }
@@ -23,8 +23,9 @@ export default class UserProfile extends Component {
       this.setState({
         firstname: nextProps.user.firstname,
         lastname: nextProps.user.lastname,
-        province: nextProps.user.province,
         city: nextProps.user.city,
+        province: nextProps.user.province,
+        email: nextProps.user.email,
         phone: nextProps.user.phone,
         skill: nextProps.user.skill
       })
@@ -37,9 +38,9 @@ export default class UserProfile extends Component {
     this.setState({
       firstname: this.refs.firstnameInput.value,
       lastname: this.refs.lastnameInput.value,
-      email: this.refs.emailInput.value,
-      province: this.refs.provinceInput.value,
       city: this.refs.cityInput.value,
+      province: this.refs.provinceInput.value,
+      email: this.refs.emailInput.value,
       phone: this.refs.phoneInput.value,
       skill: this.refs.skillInput.value
     })
@@ -64,11 +65,11 @@ export default class UserProfile extends Component {
             onChange={this.handleChange}
             placeholder='Lastname' />
           <input
-            type='email'
-            value={this.state.email}
-            ref='emailInput'
+            type='text'
+            value={this.state.city}
+            ref='cityInput'
             onChange={this.handleChange}
-            placeholder='diego@kiteup.com' />
+            placeholder='City' />
           <input
             type='text'
             value={this.state.province}
@@ -76,11 +77,11 @@ export default class UserProfile extends Component {
             onChange={this.handleChange}
             placeholder='Province' />
           <input
-            type='text'
-            value={this.state.city}
-            ref='cityInput'
+            type='email'
+            value={this.state.email}
+            ref='emailInput'
             onChange={this.handleChange}
-            placeholder='City' />
+            placeholder='diego@kiteup.com' />
           <input
             type='text'
             value={this.state.phone}
