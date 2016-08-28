@@ -87,7 +87,9 @@ export default class Invite extends Component {
     )
   }
 }
-      
+
+Invite.propTypes = {
+}      
 
 /*
 render: function(){ 
