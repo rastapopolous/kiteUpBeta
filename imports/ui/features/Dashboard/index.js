@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import Search from '../Search'
 import UserGrid from '../UserGrid'
-import Modal from '../../common/Modal'
-import Invite from '../Invite'
+
 const users = [
   {
     _id: 1,
@@ -140,13 +139,10 @@ export default class Dashboard extends Component {
 
     this.state = {
       users,
-      filteredUsers: users,
-      modalIsOpen: false
+      filteredUsers: users
     }
-    
 
     this.updateUsers = this.updateUsers.bind(this)
-    this.toggleModal = this.toggleModal.bind(this)
   }
 
   updateUsers (filteredUsers) {
@@ -155,28 +151,14 @@ export default class Dashboard extends Component {
     })
   }
 
-  toggleModal () {
-    if (this.state.modalIsOpen) {
-      this.setState({ modalIsOpen: false })
-    } else {
-      this.setState({ modalIsOpen: true })
-    }
-  }
-  
-
   render () {
     return (
       <div>
         <h2>Dashboard</h2>
-        <button className="pure-button pure-button-active" onClick={this.toggleModal}>Invite New Users</button>
-        <Modal isOpen={this.state.modalIsOpen} handleClose={this.toggleModal}>
-          <Invite/>
-        </Modal>
         <Search
           users={this.state.users}
           updatedFilteredUsers={this.updateUsers} />
         <UserGrid users={this.state.filteredUsers} />
-       
       </div>
     )
   }

@@ -18,7 +18,19 @@ export default class UserProfile extends Component {
     this.handleChange = this.handleChange.bind(this)
   }
 
-   
+  componentWillReceiveProps (nextProps) {
+    if (nextProps.user) {
+      this.setState({
+        firstname: nextProps.user.firstname,
+        lastname: nextProps.user.lastname,
+        city: nextProps.user.city,
+        province: nextProps.user.province,
+        email: nextProps.user.email,
+        phone: nextProps.user.phone,
+        skill: nextProps.user.skill
+      })
+    }
+  }
 
   handleChange (e) {
     e.preventDefault()
@@ -117,4 +129,3 @@ UserProfile.defaultProps = {
     skill: ''
   }
 }
-

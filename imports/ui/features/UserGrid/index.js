@@ -33,7 +33,6 @@ export default class UserGrid extends Component {
       userData = this.props.users.find((user) => user._id === this.state.selectedUserId)
     }
     return (
-    
       <Modal isOpen={this.state.modalIsOpen} handleClose={this.toggleModal}>
         <UserProfile user={userData} />
       </Modal>
@@ -49,7 +48,7 @@ export default class UserGrid extends Component {
     )
   }
 
-  render () { 
+  render () {
     return (
       <div>
         {this.renderModal()}
