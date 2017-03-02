@@ -4,6 +4,13 @@
   box-sizing: border-box;
 }
 
-#app {
-  padding-left: 2em;
+html,
+body {
+  height: 100%;
+  background: #F4F4F4;
+}
+
+.center-align {
+  display: flex;
+  justify-content: center;
 }

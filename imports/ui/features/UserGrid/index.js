@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import UserCard from './UserCard'
 import Modal from '../../common/Modal'
 import UserProfile from '../UserProfile'
+import Navbar from '../../common/Navbar'
 import './styles.scss'
 
 export default class UserGrid extends Component {
@@ -42,7 +43,7 @@ export default class UserGrid extends Component {
   renderUser () {
     return (
       this.props.users.map((user) =>
-        <div className='pure-u-lg-1-6 pure-u-md-1-4 pure-u-1-2' key={user._id}>
+        <div className='pure-u-lg-1-6 pure-u-md-1-5 pure-u-sm-1-2 pure-u-1-1' key={user._id}>
           <UserCard user={user} onHandleClick={this.toggleModal} />
         </div>)
     )
@@ -52,9 +53,11 @@ export default class UserGrid extends Component {
     return (
       <div>
         {this.renderModal()}
-        <div className='pure-g'>
-          <div className='pure-u-23-24 center-align'>
-            <h2>User Grid</h2>
+        <div className='top-margin center-align'>
+          <Navbar />
+        </div>
+        <div className='pure-g center-align'>
+          <div className='pure-u-22-24'>
             <div className='grid-panel'>
               {this.renderUser()}
             </div>

@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import './styles.scss'
 
 export default class Search extends Component {
   constructor () {
@@ -56,9 +57,9 @@ export default class Search extends Component {
 
   render () {
     return (
-      <div>
+      <div className='search'>
         <form
-          className='pure-form'
+          className='pure-form pure-form-stacked center-align'
           onSubmit={this.handleSubmit}>
           <input
             type='text'
@@ -67,6 +68,7 @@ export default class Search extends Component {
             ref='keywordInput'
             onChange={this.handleChange}
             placeholder='Enter any keyword' />
+          <span><i className='fa fa-search'></i></span>
         </form>
       </div>
     )

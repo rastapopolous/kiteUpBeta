@@ -1,0 +1,31 @@
+.header {
+  background: #444444;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  color: #FFF;
+
+  #login-name {
+    font-size: 1em;
+    margin-left: auto;
+    font-weight: lighter;
+  }
+
+  h1 {
+    font-weight: normal;
+    font-size: 23px;
+  }
+
+  i {
+    margin-left: 20px;
+  }
+
+  i,h1 {
+    cursor: pointer;
+  }
+
+  i:hover,h1:hover {
+    color: #ADADAD;
+  }
+}

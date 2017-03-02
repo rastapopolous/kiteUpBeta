@@ -7,9 +7,9 @@ const UserCard = ({ user, onHandleClick }) => {
     <div className='grid-cell' onClick={() => onHandleClick(_id)}>
       <figure>
         <img className='pure-img' src={image} alt='UserCard profile' />
-        <figcaption className='name'>
+        <figcaption>
           <span><p>{firstname} {lastname}</p></span>
-          <span className='city'>{city}</span>
+          <span><p>{city}</p></span>
         </figcaption>
       </figure>
     </div>
