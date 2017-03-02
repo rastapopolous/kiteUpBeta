@@ -395,7 +395,6 @@ export default class Dashboard extends Component {
   render () {
     return (
       <div>
-        <Invite />
         <Search
           users={this.state.users}
           updatedFilteredUsers={this.updateUsers}
