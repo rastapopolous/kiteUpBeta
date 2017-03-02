@@ -1,8 +1,17 @@
+// changes to imports are invite Container and messageUsers import
+// New structure for invite is invitecontainer/inviteComponent/UserInvite
+// instead of invite/inviteList
+// See notes in inviteList component for changes, mostly added functionality to confirm users
+// message users is also now included here, as a modal and modal button
 import React, { Component } from 'react'
 import Search from '../Search'
 import UserGrid from '../UserGrid'
-import Invite from '../Invite'
+import InviteContainer from '../InviteContainer'
+import MessageUsers from '../MessageUsers'
+import '../InviteContainer/styles.scss'
 
+
+// User(member) object to populate app
 const users = [
   {
     _id: 1,
@@ -367,9 +376,9 @@ export default class Dashboard extends Component {
 
     this.state = {
       users,
-      filteredUsers: users
+      filteredUsers: users,
+      placeholder: 'Enter any keyword'
     }
-
     this.updateUsers = this.updateUsers.bind(this)
   }
 
@@ -378,14 +387,23 @@ export default class Dashboard extends Component {
       filteredUsers
     })
   }
-
+  // <search/> searches by object.keys through users object then displays in UserGrid component
+  // <InviteContainer/> includes visible button that triggers
+  // modal w/group send message as string via email or txt
+  // <MessageUsers/> includes visible button that triggers
+  // modal w/group send message string via email or txt
   render () {
     return (
       <div>
         <Invite />
         <Search
           users={this.state.users}
-          updatedFilteredUsers={this.updateUsers} />
+          updatedFilteredUsers={this.updateUsers}
+          holder={this.state.placeholder} />
+        <InviteContainer />
+        <MessageUsers
+          filteredUsers={this.state.filteredUsers}
+          users={this.state.users} />
         <UserGrid users={this.state.filteredUsers} />
       </div>
     )

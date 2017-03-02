@@ -1,8 +1,9 @@
-// search should be identical both versions
+// form receives input to keywordInput, filters users against userData object,
+// (this.props.users) then passes them to addUsers prop passed in from messageUsersComponent,
+// for comparison against existing filtered users displayed in messaging component
 import React, { Component, PropTypes } from 'react'
-import './styles.scss'
 
-export default class Search extends Component {
+export default class SearchByName extends Component {
   constructor () {
     super()
 
@@ -25,8 +26,8 @@ export default class Search extends Component {
   handleSubmit (e) {
     e.preventDefault()
 
-    const filteredUsers = this.filterUsers(this.props.users, this.state.keyword)
-    this.props.updatedFilteredUsers(filteredUsers)
+    const addedUsers = this.filterUsers(this.props.users, this.state.keyword)
+    this.props.addUsers(addedUsers)
   }
 
   filterUsers (users, keyword) {
@@ -36,32 +37,30 @@ export default class Search extends Component {
     }
 
     const lowecaseKeyword = keyword.toLowerCase()
-    // return the filtered collection of users
+
     return users.filter((user) => {
       let match = false
+      const fullname = [user.firstname, user.lastname]
 
-      Object.keys(user).forEach((key) => {
+      fullname.forEach((part) => {
         if (!match) {
-          let value = user[key]
-
+          let value = part
           if (typeof value === 'string') {
             value = value.toLowerCase()
             match = value.includes(lowecaseKeyword)
           }
         }
       })
-
       return match
     })
   }
 
   render () {
     return (
-
       <div className='el-spacing'>
-
+        <span>Add users by first or last name:</span>
         <form
-          className='pure-form pure-form-stacked center-align'
+          className='pure-form'
           onSubmit={this.handleSubmit}>
           <input
             type='text'
@@ -69,15 +68,14 @@ export default class Search extends Component {
             value={this.state.keyword}
             ref='keywordInput'
             onChange={this.handleChange}
-            placeholder={this.props.holder} />
+            placeholder='Enter name here' />
         </form>
       </div>
     )
   }
 }
 
-Search.propTypes = {
+SearchByName.propTypes = {
   users: PropTypes.array.isRequired,
-  updatedFilteredUsers: PropTypes.func.isRequired,
-  holder: PropTypes.string.isRequired
+  addUsers: PropTypes.func.isRequired
 }

@@ -1,3 +1,4 @@
+// edwin version josh version identical
 import React, { Component, PropTypes } from 'react'
 import UserCard from './UserCard'
 import Modal from '../../common/Modal'

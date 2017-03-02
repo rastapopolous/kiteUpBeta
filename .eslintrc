@@ -7,12 +7,13 @@
     "airbnb",
     "plugin:meteor/recommended"
   ],
-  "settings": {
-    "import/resolver": "meteor"
-  },
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module"
+  },
+
+  "settings": {
+    "import/resolver": "meteor"
   },
   "rules": {
     "semi": [2, "never"],
@@ -22,6 +23,6 @@
     "space-before-function-paren": [2, "always"],
     "comma-dangle": [2, "never"],
     "react/jsx-closing-bracket-location": [2, "after-props"],
-    "no-underscore-dangle": [2, {"allow": ["_id"]}]
+    "no-underscore-dangle": [2, {"allow": ["_id"]}],
   }
 }

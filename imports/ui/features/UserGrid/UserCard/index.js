@@ -1,3 +1,4 @@
+// edwin version josh version identical
 import React, { PropTypes } from 'react'
 import './styles.scss'
 

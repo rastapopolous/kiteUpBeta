@@ -1,3 +1,4 @@
+// edwin version
 import React, { Component, PropTypes } from 'react'
 import './styles.scss'
 
