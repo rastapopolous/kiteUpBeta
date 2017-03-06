@@ -6,7 +6,9 @@ export default class App extends Component {
     return (
       <div>
         <div className='header'>
-          <h1>KiteUp</h1>
+          <IndexLink to='/'>
+            <h1>KiteUp</h1>
+          </IndexLink>
           <span id='login-name'>Admin</span>
           <div><i className='fa fa-cog fa-2x'></i></div>
         </div>
