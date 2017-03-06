@@ -5,6 +5,7 @@ import { Meteor } from 'meteor/meteor'
 
 import App from '../imports/ui/features/App'
 import Home from '../imports/ui/features/Home'
+import UserProfile from '../imports/ui/features/UserProfile'
 
 Meteor.startup(() => {
   ReactDOM.render(
@@ -12,6 +13,7 @@ Meteor.startup(() => {
     <Router history={browserHistory}>
       <Route path='/' component={App}>
         <IndexRoute component={Home} />
+        <Route path='user/add' component={UserProfile} />
       </Route>
     </Router>
     ),
