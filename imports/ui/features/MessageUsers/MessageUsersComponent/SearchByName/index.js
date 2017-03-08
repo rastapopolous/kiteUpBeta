@@ -1,6 +1,6 @@
 // form receives input to keywordInput, filters users against userData object,
 // (this.props.users) then passes them to addUsers prop passed in from messageUsersComponent,
-// for comparison against existing filtered users displayed in messaging component
+// for comparison against existing filtered users already displayed in messaging component
 import React, { Component, PropTypes } from 'react'
 
 export default class SearchByName extends Component {
