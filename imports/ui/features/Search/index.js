@@ -58,10 +58,9 @@ export default class Search extends Component {
   render () {
     return (
 
-      <div className='el-spacing'>
-
-        <form
-          className='pure-form pure-form-stacked center-align'
+      <div id='container'>
+        <form className='pure-form pure-form-stacked center-align'>
+          <div id='magGlass'></div>
           onSubmit={this.handleSubmit}>
           <input
             type='text'

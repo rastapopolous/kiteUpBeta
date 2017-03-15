@@ -25,7 +25,7 @@ export default class UserGrid extends Component {
       this.setState({ modalIsOpen: false })
     } else {
       this.setState({ modalIsOpen: true,
-                      selectedUserId: userId })
+        selectedUserId: userId })
     }
   }
 

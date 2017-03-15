@@ -11,7 +11,7 @@ export default class Navbar extends Component {
   render () {
     return (
       <div id='navbar'>
-        <p>Dashboard</p>
+        <h1>Client Directory</h1>
         <div className='dropdown'>
           <input type='checkbox' id='dropmenu' />
           <label htmlFor='dropmenu'><i className='fa fa-th-large'></i></label>

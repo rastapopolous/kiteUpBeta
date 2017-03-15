@@ -1,19 +1,69 @@
 import React, { Component, PropTypes } from 'react'
 import './styles.scss'
 import { IndexLink } from 'react-router'
+import Search from '../Search'
+import InviteContainer from '../InviteContainer'
 import '../InviteContainer/styles.scss'
-import users from '../../data/users.js'
+import MessageUsers from '../MessageUsers'
+import users from '../../../data/users.js'
+import UserGrid from '../UserGrid'
+
 
 export default class App extends Component {
+  constructor () {
+    super()
+
+    this.state = {
+      users,
+      filteredUsers: users,
+      placeholder: 'Enter any keyword'
+    }
+    this.updateUsers = this.updateUsers.bind(this)
+  }
+
+  updateUsers (filteredUsers) {
+    this.setState({
+      filteredUsers
+    })
+  }
+
+  // <search/> searches by object.keys through users object, displays in UserGrid component
+  // <InviteContainer/> includes visible button that triggers
+  // modal w/group send message as string via email or txt
+  // <MessageUsers/> includes visible button that triggers
+  // modal w/group send message string via email or txt
   render () {
     return (
       <div>
         <div className='header'>
-          <IndexLink to='/'>
-            <h1>KiteUp</h1>
-          </IndexLink>
-          <span id='login-name'>Admin</span>
-          <div><i className='fa fa-cog fa-2x'></i></div>
+          <div className='nav-row'>
+            <div id='index-cell' className='nav-row-col'>
+              <IndexLink to='/' style={{ textDecoration: 'none', color: 'AliceBlue' }}>
+                <span id='index-link'>KiteUp</span>
+              </IndexLink >
+            </div>
+            <div id='search-cell' className='nav-row-col'>
+              <Search
+                users={this.state.users}
+                updatedFilteredUsers={this.updateUsers}
+                holder={this.state.placeholder} />
+            </div>
+          </div>
+          <div className='nav-row'>
+            <div id='nav-buttons' className='nav-row-col'>
+              <MessageUsers
+                filteredUsers={this.state.filteredUsers}
+                users={this.state.users} />
+              <InviteContainer />
+            </div>
+            <div id='gear-admin'className='nav-row-col'>
+              <div id='login-name'><span>Admin</span></div>
+              <div><i className='fa fa-cog fa-2x'></i></div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <UserGrid users={this.state.filteredUsers} />
         </div>
         {this.props.children}
       </div>
@@ -21,14 +71,7 @@ export default class App extends Component {
   }
 }
 
+
 App.propTypes = {
   children: PropTypes.node
 }
-/*
-<Link to
-  className="btn btn-pink"
-  role="button"
-  to="/"
-  onClick={this.handleClick()}
-</Link>
-*/

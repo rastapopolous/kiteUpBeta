@@ -1,8 +1,7 @@
 
-// messageUsers & messageUsersComponent/searchByName are only in josh-invite branch
 import React, { Component, PropTypes } from 'react'
 import UserCard from '../../UserGrid/UserCard'
-import SearchByName from './SearchByName'
+import SearchByName from '../SearchByName'
 import './styles.scss'
 
 export default class MessageUsersComponent extends Component {
@@ -102,10 +101,20 @@ export default class MessageUsersComponent extends Component {
   render () {
     return (
       <div>
-        <div className='formSize'>
-          <SearchByName
-            users={this.state.users}
-            addUsers={this.addUsers} />
+        <div className='topGrid blackText'>
+          <div>
+            <span className='blackText leftGrid'>Add Users by first or last name:</span>
+          </div>
+          <div className='rightGrid' >
+            <SearchByName
+              users={this.state.users}
+              addUsers={this.addUsers} />
+          </div>
+        </div>
+        <div className='grid-panel'>
+          {this.renderUser()}
+        </div>
+        <div className='radios blackText'>
           <form >
             <input
               type='radio'
@@ -123,24 +132,23 @@ export default class MessageUsersComponent extends Component {
               ref='emailButton'
               onChange={this.toggleRadio} />
             <span> send email</span>
-            <textarea
-              className='textArea'
-              type='text'
-              autoFocus
-              value={this.state.message}
-              ref='messageInput'
-              placeholder='Write your message here'
-              onChange={this.handleChange}
-              rows='10' cols='50'>
-            </textarea>
+            <button
+              className='pure-button pure-button-active sendButton'
+              onClick={this.sendMessage}>
+              Send Message
+            </button>
           </form>
-          <button className='pure-button pure-button-active' onClick={this.sendMessage}>
-          Send Message
-          </button>
         </div>
-        <div className='grid-panel'>
-          {this.renderUser()}
-        </div>
+        <textarea
+          className='txtBox blackText'
+          type='text'
+          autoFocus
+          value={this.state.message}
+          ref='messageInput'
+          placeholder='Write your message here'
+          onChange={this.handleChange}
+          rows='5' cols='40'>
+        </textarea>
       </div>
     )
   }
