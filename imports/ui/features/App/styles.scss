@@ -3,6 +3,9 @@
   display: flex;
   -webkit-flex-direction: column;
   flex-direction: column;
+  height: 6.5em;
+  width: 100%
+
 }
 
 .nav-row {
@@ -10,77 +13,99 @@
   display: flex;
   -webkit-flex-direction: row;
   flex-direction: row;
-  vertical-align: center;
-  background: #2F4F4F;
+  background: #72BEE6;
   padding: 0 20px;
   color: #FFF;
 }
+
+#nav-top {
+  -webkit-flex: 2 0 0;
+   flex: 1 0 0;
+   width: 100%;
+
+}
+
+#nav-bottom {
+  -webkit-flex: 1 0 0;
+   flex: 1 0 0;
+   width: 100%;
+   vertical-align: bottom;
+}
+
 
 .nav-row-col {
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: row;
   flex-direction: row;
-  padding: 0 20px;
+  padding: .5em;
 }
-
+////////////////////////////////////////////////////
 #index-cell{
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-flex: 2 0 0;
-   flex: 2 0 0;
-}
-
-#search-cell {
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-flex: 5 0 0;
-   flex: 5 0 0;
-}
-
-
-#nav-buttons {
   -webkit-justify-content: flex-start;
   justify-content: flex-start;
   -webkit-flex: 1 0 0;
    flex: 1 0 0;
 }
 
-#gear-admin {
-  padding-left: 10em;
-  -webkit-justify-content: flex-end;
-  justify-content: flex-end;
-  -webkit-flex: 4 0 0;
-   flex: 4 0 0;
+
+#search-cell {
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex: 2.3 0 0;
+   flex: 2.3 0 0;
+   vertical-align: bottom;
 }
 
+#navbuttons-cell {
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex: 5 0 0;
+   flex: 5 0 0;
+
+}
+
+#gear-admin-cell {
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  -webkit-flex: 1 0 0;
+   flex: 1 0 0;
+}
+//////////////////////////////////////////
 #index-link {
   padding-top: 1em;
   padding-right: 4em;
-  font-size: 3em;
+  font-size: 2.5em;
 }
+
 #login-name {
-  height: 2em;
-  width: 2em;
+  display: block;
+  height: 4em;
+  width: 4em;
   padding-top: 4em;
   font-size: .5em;
   font-weight: bold;
+}
 
+#facog {
+  display: block;
+  height: 4em;
+  width: 4em;
+}
 
-  h1 {
-    font-weight: normal;
-    font-size: 23px;
-  }
+h1 {
+  font-weight: normal;
+  font-size: 23px;
+}
 
-  i {
-    margin-left: 1px;
-  }
+i {
+  margin-left: 1px;
+}
 
-  i,h1 {
-    cursor: pointer;
-  }
+i,h1 {
+  cursor: pointer;
+}
 
-  i:hover,h1:hover {
+i:hover,h1:hover {
     color: #ADADAD;
-  }
 }

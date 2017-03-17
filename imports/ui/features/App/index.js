@@ -16,7 +16,7 @@ export default class App extends Component {
     this.state = {
       users,
       filteredUsers: users,
-      placeholder: 'Enter any keyword'
+      placeholder: '  search clients...(by name, city, state, skill level)'
     }
     this.updateUsers = this.updateUsers.bind(this)
   }
@@ -36,7 +36,7 @@ export default class App extends Component {
     return (
       <div>
         <div className='header'>
-          <div className='nav-row'>
+          <div id='nav-top' className='nav-row'>
             <div id='index-cell' className='nav-row-col'>
               <IndexLink to='/' style={{ textDecoration: 'none', color: 'AliceBlue' }}>
                 <span id='index-link'>KiteUp</span>
@@ -49,16 +49,16 @@ export default class App extends Component {
                 holder={this.state.placeholder} />
             </div>
           </div>
-          <div className='nav-row'>
-            <div id='nav-buttons' className='nav-row-col'>
+          <div id='nav-bottom' className='nav-row'>
+            <div id='navbuttons-cell' className='nav-row-col'>
               <MessageUsers
                 filteredUsers={this.state.filteredUsers}
                 users={this.state.users} />
               <InviteContainer />
             </div>
-            <div id='gear-admin'className='nav-row-col'>
+            <div id='gear-admin-cell'className='nav-row-col'>
               <div id='login-name'><span>Admin</span></div>
-              <div><i className='fa fa-cog fa-2x'></i></div>
+              <div id='facog'><i className='fa fa-cog fa-2x'></i></div>
             </div>
           </div>
         </div>

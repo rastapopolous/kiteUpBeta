@@ -57,19 +57,20 @@ export default class Search extends Component {
 
   render () {
     return (
-
-      <div id='container'>
-        <form className='pure-form pure-form-stacked center-align'>
-          <div id='magGlass'></div>
-          onSubmit={this.handleSubmit}>
-          <input
-            type='text'
-            autoFocus
-            value={this.state.keyword}
-            ref='keywordInput'
-            onChange={this.handleChange}
-            placeholder={this.props.holder} />
-        </form>
+      <div>
+        <div id='search-container'>
+          <div id='fa-div'><i className='fa fa-search'></i></div>
+          <form
+            onSubmit={this.handleSubmit}>
+            <input
+              id='inputs'
+              value={this.state.keyword}
+              ref='keywordInput'
+              onChange={this.handleChange}
+              onSubmit={this.handleSubmit}
+              placeholder={this.props.holder} />
+          </form>
+        </div>
       </div>
     )
   }

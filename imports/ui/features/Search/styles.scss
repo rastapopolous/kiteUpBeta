@@ -1,23 +1,74 @@
-.search {
-  .pure-form {
-    margin-top: 20px;
 
-    input {
-      width: 78%;
-    }
-  }
 
   span {
     position: relative;
 
     i {
-      position: absolute;
+      position: relative;
       font-size: 23px;
       top: 4px;
       right: 0;
-      left: -50px;
+
       background: #EE6E73;
-      padding: 10px 15px 3px 15px;
+
     }
   }
+
+#search-container {
+  display: -webkit-flex;
+  display: flex;
+  width: 30em;
+  height: 2.1em;
+  margin-top: .5em;
+  background-color: #E6E6E6;
+  border-radius: .3em;
+  border-color: #C0C0C0;
+
 }
+
+#fa-div {
+  width: 1em;
+  margin-top: .5em;
+  margin-left: .3em;
+  border-radius: .3em;
+}
+
+#inputs {
+  width: 27em;
+  padding-top: .5em;
+  padding-left: .25em;
+  background: gray;
+  border: none;
+  background-color: #E6E6E6;
+  border-radius: .3em;
+}
+/*
+::-webkit-input-placeholder {
+ font: 10px helvetica;
+ color: gray;
+ text-align: left;
+ font-style: italic;
+}
+:-moz-placeholder { /* older Firefox*/
+/*
+font: 10px helvetica;
+ color: gray;
+ text-align: left;
+ font-style: italic;
+}
+::-moz-placeholder { /* Firefox 19+ */
+/*
+ font: 10px helvetica;
+ color: gray;
+ text-align: left;
+ font-style: italic;
+
+}
+:-ms-input-placeholder {
+ font: 10px helvetica;
+ color: gray;
+ text-align: left;
+ font-style: italic;
+
+}
+*/
