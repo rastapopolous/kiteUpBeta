@@ -3,7 +3,7 @@
 import React, { Component } from 'react'
 import InviteComponent from './InviteComponent'
 import Modal from '../../common/Modal'
-import styles from './styles'
+import './styles.scss'
 
 export default class Invite extends Component {
   constructor () {
@@ -27,8 +27,10 @@ export default class Invite extends Component {
   render () {
     return (
       <div>
-        <button className='pure-button pure-button-active el-spacing' onClick={this.toggleModal}>
-          Invite New Users
+        <button
+          className='pure-button pure-button-active add-button el-spacing'
+          onClick={this.toggleModal}>
+          Add Clients
         </button>
         <Modal isOpen={this.state.modalIsOpen} handleClose={this.toggleModal}>
           <InviteComponent />

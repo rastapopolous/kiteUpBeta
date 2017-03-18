@@ -50,7 +50,6 @@ export default class Search extends Component {
           }
         }
       })
-
       return match
     })
   }
@@ -58,19 +57,20 @@ export default class Search extends Component {
   render () {
     return (
       <div>
-        <div id='search-container'>
-          <div id='fa-div'><i className='fa fa-search'></i></div>
-          <form
-            onSubmit={this.handleSubmit}>
-            <input
-              id='inputs'
-              value={this.state.keyword}
-              ref='keywordInput'
-              onChange={this.handleChange}
-              onSubmit={this.handleSubmit}
-              placeholder={this.props.holder} />
-          </form>
-        </div>
+        <form
+          id='left-addon'
+          className=' pure-form inner-addon width'
+          onSubmit={this.handleSubmit}>
+          <i className='fa fa-search'></i>
+          <input
+            className='pure-input-2-3'
+            type='text'
+            value={this.state.keyword}
+            ref='keywordInput'
+            onChange={this.handleChange}
+            onSubmit={this.handleSubmit}
+            placeholder={this.props.holder} />
+        </form>
       </div>
     )
   }

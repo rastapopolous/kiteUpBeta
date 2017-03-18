@@ -3,7 +3,6 @@ import React, { Component, PropTypes } from 'react'
 import UserCard from './UserCard'
 import Modal from '../../common/Modal'
 import UserProfile from '../UserProfile'
-import Navbar from '../../common/Navbar'
 import './styles.scss'
 
 export default class UserGrid extends Component {
@@ -54,13 +53,15 @@ export default class UserGrid extends Component {
     return (
       <div>
         {this.renderModal()}
-        <div className='top-margin center-align'>
-          <Navbar />
-        </div>
-        <div className='pure-g center-align'>
-          <div className='pure-u-22-24'>
-            <div className='grid-panel'>
-              {this.renderUser()}
+        <div className='center-align'>
+          <div className='pure-g center-align'>
+            <div className='pure-u-22-24'>
+              <div className='grid-panel'>
+                <div className='textStyle'>
+                  <h1>Client Directory</h1>
+                </div>
+                {this.renderUser()}
+              </div>
             </div>
           </div>
         </div>

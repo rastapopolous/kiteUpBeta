@@ -3,7 +3,8 @@
 import React, { Component, PropTypes } from 'react'
 import MessageUsersComponent from './MessageUsersComponent'
 import Modal from '../../common/Modal'
-import '../InviteContainer/styles.scss'
+import './styles.scss'
+
 export default class MessageUsers extends Component {
   constructor () {
     super()
@@ -27,8 +28,10 @@ export default class MessageUsers extends Component {
   render () {
     return (
       <div>
-        <button className='pure-button pure-button-active el-spacing' onClick={this.toggleModal}>
-          Message Users
+        <button
+          className='pure-button pure-button-active message-button el-spacing'
+          onClick={this.toggleModal}>
+          Message Clients
         </button>
         <Modal isOpen={this.state.modalIsOpen} handleClose={this.toggleModal}>
           <MessageUsersComponent

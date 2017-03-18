@@ -16,7 +16,7 @@ export default class App extends Component {
     this.state = {
       users,
       filteredUsers: users,
-      placeholder: '  search clients...(by name, city, state, skill level)'
+      placeholder: '  search clients (by name, city, state, skill level)'
     }
     this.updateUsers = this.updateUsers.bind(this)
   }
@@ -42,12 +42,6 @@ export default class App extends Component {
                 <span id='index-link'>KiteUp</span>
               </IndexLink >
             </div>
-            <div id='search-cell' className='nav-row-col'>
-              <Search
-                users={this.state.users}
-                updatedFilteredUsers={this.updateUsers}
-                holder={this.state.placeholder} />
-            </div>
           </div>
           <div id='nav-bottom' className='nav-row'>
             <div id='navbuttons-cell' className='nav-row-col'>
@@ -56,7 +50,13 @@ export default class App extends Component {
                 users={this.state.users} />
               <InviteContainer />
             </div>
-            <div id='gear-admin-cell'className='nav-row-col'>
+            <div id='search-cell' className='nav-row-col'>
+              <Search
+                users={this.state.users}
+                updatedFilteredUsers={this.updateUsers}
+                holder={this.state.placeholder} />
+            </div>
+            <div id='gear-a dmin-cell'className='nav-row-col'>
               <div id='login-name'><span>Admin</span></div>
               <div id='facog'><i className='fa fa-cog fa-2x'></i></div>
             </div>
