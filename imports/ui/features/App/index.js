@@ -56,7 +56,7 @@ export default class App extends Component {
                 updatedFilteredUsers={this.updateUsers}
                 holder={this.state.placeholder} />
             </div>
-            <div id='gear-a dmin-cell'className='nav-row-col'>
+            <div id='gear-admin-cell'className='nav-row-col'>
               <div id='login-name'><span>Admin</span></div>
               <div id='facog'><i className='fa fa-cog fa-2x'></i></div>
             </div>

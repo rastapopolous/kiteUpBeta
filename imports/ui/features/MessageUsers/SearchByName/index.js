@@ -2,6 +2,7 @@
 // (this.props.users) then passes them to addUsers prop passed in from messageUsersComponent,
 // for comparison against existing filtered users already displayed in messaging component
 import React, { Component, PropTypes } from 'react'
+import './styles.scss'
 
 export default class SearchByName extends Component {
   constructor () {
@@ -59,14 +60,16 @@ export default class SearchByName extends Component {
     return (
       <div>
         <form
-          onSubmit={this.handleSubmit}>
+          onSubmit={this.handleSubmit}
+          className='pure-form'>
           <input
+            className='pure-input input-style'
             type='text'
             autoFocus
             value={this.state.keyword}
             ref='keywordInput'
             onChange={this.handleChange}
-            placeholder='Enter name here' />
+            placeholder='enter name here' />
         </form>
       </div>
     )

@@ -1,6 +1,6 @@
 .modal {
-  max-width: 100%;
-  max-height: 100%;
+  width: 80%;
+  height: 90%;
   position: fixed;
   z-index: 100;
   top: 0;
@@ -8,7 +8,7 @@
   left: 0;
   right: 0;
   margin: 2% auto;
-  background: #fff;
+  background-color: #F0F8FF;
 }
 
 .modal-overlay {
@@ -34,18 +34,18 @@
 .close {
   background: #606061;
   color: #FFFFFF;
-  line-height: 50px;
+  line-height: 26px;
   position: absolute;
-  right: -18px;
+  right: -10px;
   text-align: center;
-  top: -15px;
-  width: 50px;
-  height: 50px;
+  top: -11px;
+  width: 23px;
+  height: 23px;
   text-decoration: none;
   font-weight: bold;
   border-radius: 25px;
   box-shadow: 1px 1px 3px #000;
-  font-size: 20px;
+  font-size: 16px;
 
   &:hover {
     background: #00d9ff;

@@ -59,7 +59,7 @@ export default class Search extends Component {
       <div>
         <form
           id='left-addon'
-          className=' pure-form inner-addon width'
+          className='pure-form inner-addon width'
           onSubmit={this.handleSubmit}>
           <i className='fa fa-search'></i>
           <input

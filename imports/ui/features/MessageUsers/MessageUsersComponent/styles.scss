@@ -5,9 +5,14 @@
   overflow: auto;
 }
 
+.gray-text {
+  color: #696969;
+}
+
 .txtBox {
   display: inline-block;
   float: right;
+  color: #808080;
 }
 
 .radios {
@@ -21,28 +26,37 @@
   float:left;
   margin-top: 27px;
 }
-.topGrid {
-  width: 85%;
-  height: 20px;
+
+.add-user-grid {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  width: 100%;
+  height: 40px;
 }
 
-.topGrid div {
-    width: 50%;
+.span-flex {
+  -webkit-flex: 1.3 0 0;
+   flex: 1.3 0 0;
 }
 
-.rightGrid{
-  display: block;
-  float: right;
+.input-flex {
+  -webkit-flex: 1 0 0;
+   flex: 1 0 0;
+   padding-bottom: .3em;
+}
+.span-text {
+  font-size: 1.3em;
+  color: 	#696969;
+  margin-left: .6em;
+  margin-bottom: .6em;
 }
 
-.leftGrid {
-  padding-top: 5px;
-  display: block;
-  float: left;
-}
-
-.blackText {
-  color:black;
+.input-style {
+  margin-bottom: .5em;
 }
 
 .formDiv {

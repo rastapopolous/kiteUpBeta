@@ -101,21 +101,21 @@ export default class MessageUsersComponent extends Component {
   render () {
     return (
       <div>
-        <div className='topGrid blackText'>
-          <div>
-            <span className='blackText leftGrid'>Add Users by first or last name:</span>
-          </div>
-          <div className='rightGrid' >
-            <SearchByName
-              users={this.state.users}
-              addUsers={this.addUsers} />
-          </div>
-        </div>
         <div className='grid-panel'>
+          <div className='add-user-grid'>
+            <div className='span-text user-flex'>
+              <span>Add Users by first or last name:</span>
+            </div>
+            <div className='user-flex pure-input-2-3 input-style'>
+              <SearchByName
+                users={this.state.users}
+                addUsers={this.addUsers} />
+            </div>
+          </div>
           {this.renderUser()}
         </div>
         <div className='radios blackText'>
-          <form >
+          <form className='gray-text'>
             <input
               type='radio'
               name='msgRadio'
@@ -133,14 +133,14 @@ export default class MessageUsersComponent extends Component {
               onChange={this.toggleRadio} />
             <span> send email</span>
             <button
-              className='pure-button pure-button-active sendButton'
+              className='pure-button pure-button-primary pure-button-active sendButton'
               onClick={this.sendMessage}>
               Send Message
             </button>
           </form>
         </div>
         <textarea
-          className='txtBox blackText'
+          className='txtBox'
           type='text'
           autoFocus
           value={this.state.message}
