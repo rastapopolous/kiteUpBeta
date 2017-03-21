@@ -56,7 +56,7 @@ export default class UserGrid extends Component {
         <div className='center-align'>
           <div className='pure-g center-align'>
             <div className='pure-u-22-24'>
-              <div className='grid-panel'>
+              <div className='grid-panell'>
                 <div className='textStyle'>
                   <h1>Client Directory</h1>
                 </div>

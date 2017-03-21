@@ -1,9 +1,10 @@
 .grid-cell {
-  margin: 0 10px 20px;
-  box-shadow: 2px 2px 2px #dddddd;
-  padding: 8px 8px 2px 8px;
+  margin: 0 10px 15px;
+  border: 2px solid #DCDCDC;
+
+  border-radius: 3px;
   overflow: auto;
-  background: #fff;
+  background: #DCDCDC;
   cursor: pointer;
 
   figure {
@@ -13,9 +14,9 @@
   figcaption {
     display: flex;
     flex-direction: column;
-    padding: 0.50em 0;
-    font-size: 0.70em;
-    color: 		#2F4F4F;
+    padding: 0.20em 0;
+    font-size: 0.60em;
+    color: #2F4F4F;
 
     p {
       margin: 0;

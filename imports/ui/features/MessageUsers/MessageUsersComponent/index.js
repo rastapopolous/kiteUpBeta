@@ -78,13 +78,17 @@ export default class MessageUsersComponent extends Component {
       this.state.users.forEach((user) => {
         if (this.refs.textButton.checked) {
           this.state.textList.push(user.phone)
-        } else { this.state.emailList.push(user.email) }
+        } else {
+          this.state.emailList.push(user.email)
+        }
       })
     }
 
     if (this.state.emailList.length !== 0) {
+      alert('sending your email to:' + this.state.emailList)
       this.setState({ emailList: [] })
     } else {
+      alert('sending your text to:' + this.state.textList)
       this.setState({ textList: [] })
     }
   }
@@ -92,7 +96,7 @@ export default class MessageUsersComponent extends Component {
   renderUser () {
     return (
       this.state.filteredUsers.map((user) =>
-        <div className='pure-u-lg-1-6 pure-u-md-1-4 pure-u-1-2' key={user._id}>
+        <div className='pure-u-lg-1-8 pure-u-md-1-5 pure-u-1-3' key={user._id}>
           <UserCard user={user} onHandleClick={this.removeUser} />
         </div>)
     )
@@ -102,53 +106,59 @@ export default class MessageUsersComponent extends Component {
     return (
       <div>
         <div className='grid-panel'>
-          <div className='add-user-grid'>
-            <div className='span-text user-flex'>
-              <span>Add Users by first or last name:</span>
+          <div className='add-user'>
+            <div className='span-text'>
+              <span>Add clients by first or last name:</span>
             </div>
-            <div className='user-flex pure-input-2-3 input-style'>
+            <div className='input-name'>
               <SearchByName
                 users={this.state.users}
                 addUsers={this.addUsers} />
             </div>
           </div>
-          {this.renderUser()}
+          <div className='user-grid'>
+            {this.renderUser()}
+          </div>
+          <div className='bottom'>
+            <div className='radios'>
+              <form className='gray-text'>
+                <input
+                  type='radio'
+                  name='msgRadio'
+                  id='text'
+                  value='text'
+                  ref='textButton'
+                  onChange={this.toggleRadio} />
+                <span> send text message</span><br></br>
+                <input
+                  type='radio'
+                  name='msgRadio'
+                  id='email'
+                  value='email'
+                  ref='emailButton'
+                  onChange={this.toggleRadio} />
+                <span> send email</span>
+                <button
+                  className='pure-button pure-button-primary pure-button-active sendButton'
+                  onClick={this.sendMessage}>
+                  Send Message
+                </button>
+              </form>
+            </div>
+            <div>
+              <textarea
+                className='txt-box'
+                type='text'
+                autoFocus
+                value={this.state.message}
+                ref='messageInput'
+                placeholder='Write your message here'
+                onChange={this.handleChange}
+                rows='5' cols='40'>
+              </textarea>
+            </div>
+          </div>
         </div>
-        <div className='radios blackText'>
-          <form className='gray-text'>
-            <input
-              type='radio'
-              name='msgRadio'
-              id='text'
-              value='text'
-              ref='textButton'
-              onChange={this.toggleRadio} />
-            <span> send text message</span><br></br>
-            <input
-              type='radio'
-              name='msgRadio'
-              id='email'
-              value='email'
-              ref='emailButton'
-              onChange={this.toggleRadio} />
-            <span> send email</span>
-            <button
-              className='pure-button pure-button-primary pure-button-active sendButton'
-              onClick={this.sendMessage}>
-              Send Message
-            </button>
-          </form>
-        </div>
-        <textarea
-          className='txtBox'
-          type='text'
-          autoFocus
-          value={this.state.message}
-          ref='messageInput'
-          placeholder='Write your message here'
-          onChange={this.handleChange}
-          rows='5' cols='40'>
-        </textarea>
       </div>
     )
   }
