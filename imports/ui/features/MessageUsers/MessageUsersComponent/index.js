@@ -96,7 +96,7 @@ export default class MessageUsersComponent extends Component {
   renderUser () {
     return (
       this.state.filteredUsers.map((user) =>
-        <div className='pure-u-lg-1-8 pure-u-md-1-5 pure-u-1-3' key={user._id}>
+        <div className='pure-u-lg-1-5 pure-u-md-1-3 pure-u-1-1' key={user._id}>
           <UserCard user={user} onHandleClick={this.removeUser} />
         </div>)
     )
@@ -105,10 +105,10 @@ export default class MessageUsersComponent extends Component {
   render () {
     return (
       <div>
-        <div className='grid-panel'>
+        <div id='grid-panell'>
           <div className='add-user'>
             <div className='span-text'>
-              <span>Add clients by first or last name:</span>
+              <h2>Add clients by first or last name:</h2>
             </div>
             <div className='input-name'>
               <SearchByName
@@ -117,11 +117,12 @@ export default class MessageUsersComponent extends Component {
             </div>
           </div>
           <div className='user-grid'>
+            <h4 id='h4-italic'>click on any client to remove from message</h4>
             {this.renderUser()}
           </div>
           <div className='bottom'>
-            <div className='radios'>
-              <form className='gray-text'>
+            <div className='bottom-left'>
+              <form className='bottomleft-radios'>
                 <input
                   type='radio'
                   name='msgRadio'
@@ -138,23 +139,25 @@ export default class MessageUsersComponent extends Component {
                   ref='emailButton'
                   onChange={this.toggleRadio} />
                 <span> send email</span>
+              </form>
+              <div className='bottomleft-button'>
                 <button
                   className='pure-button pure-button-primary pure-button-active sendButton'
                   onClick={this.sendMessage}>
                   Send Message
                 </button>
-              </form>
+              </div>
             </div>
             <div>
               <textarea
-                className='txt-box'
+                className='bottom-right'
                 type='text'
                 autoFocus
                 value={this.state.message}
                 ref='messageInput'
                 placeholder='Write your message here'
                 onChange={this.handleChange}
-                rows='5' cols='40'>
+                rows='7' cols='40'>
               </textarea>
             </div>
           </div>

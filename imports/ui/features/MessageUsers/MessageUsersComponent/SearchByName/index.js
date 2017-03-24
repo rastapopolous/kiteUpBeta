@@ -57,7 +57,7 @@ export default class SearchByName extends Component {
 
   render () {
     return (
-      <div className='el-spacing'>
+      <div>
         <form
           onSubmit={this.handleSubmit}>
           <input
