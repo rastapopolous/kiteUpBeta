@@ -8,13 +8,16 @@
 
 }
 
+.el-spacing {
+ margin: 6px 2px 10px 0px;
+ }
+
 .nav-row {
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: row;
   flex-direction: row;
   background: #72BEE6;
-  padding: 0 20px;
   color: #FFF;
 }
 
@@ -31,6 +34,7 @@
    flex: 1 0 0;
    width: 100%;
    vertical-align: center;
+
 }
 
 
@@ -41,6 +45,7 @@
   flex-direction: row;
   padding: .5em;
 }
+
 ////////////////////////////////////////////////////
 #index-cell{
   -webkit-justify-content: flex-start;
@@ -50,27 +55,48 @@
 }
 
 
-#search-cell {
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-flex: 2 0 0;
-   flex: 2 0 0;
-   padding-bottom: 20px;
-
-}
 
 #navbuttons-cell {
   -webkit-justify-content: flex-start;
   justify-content: flex-start;
-  -webkit-flex: 1.5 0 0;
-   flex: 1.5 0 0;
-}
-
-#gear-admin-cell {
-  -webkit-justify-content: flex-end;
-  justify-content: flex-end;
   -webkit-flex: 1 0 0;
    flex: 1 0 0;
+}
+
+#search-cell {
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex: 1.2 0 0;
+  flex: 1.2 0 0;
+  padding-bottom: .5em;
+
+}
+
+#weather-cell {
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  -webkit-flex: .8 0 0;
+  flex: .8 0 0;
+  padding-bottom: .2em;
+}
+
+#q-weather {
+  margin: 6px 1px 10px 0px;
+  color: #808080;
+  font-size: 90%;
+}
+
+#weather-button {
+  background-color: #F0F8FF;
+  color: #808080;
+  border-radius: 4px;
+  font-size: 85%;
+  font-weight: bold;
+  height: 75%;
+  width: 30%;
+  padding-right: .25em;
+  padding-left: .25em;
+
 }
 //////////////////////////////////////////
 #index-link {

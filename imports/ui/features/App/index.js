@@ -7,7 +7,7 @@ import '../InviteContainer/styles.scss'
 import MessageUsers from '../MessageUsers'
 import users from '../../../data/users.js'
 import UserGrid from '../UserGrid'
-
+import LocationInputForm from '../LocationInputForm'
 
 export default class App extends Component {
   constructor () {
@@ -16,9 +16,18 @@ export default class App extends Component {
     this.state = {
       users,
       filteredUsers: users,
-      placeholder: '  search clients (by name, city, state, skill level)'
+      placeholder: '  search clients (by name, city, state, skill level)',
+      city: ''
     }
+    this.handleChange = this.handleChange.bind(this)
     this.updateUsers = this.updateUsers.bind(this)
+  }
+
+  handleChange (e) {
+    e.preventDefault()
+    this.setState({
+      city: this.refs.keywordInput.value
+    })
   }
 
   updateUsers (filteredUsers) {
@@ -56,9 +65,8 @@ export default class App extends Component {
                 updatedFilteredUsers={this.updateUsers}
                 holder={this.state.placeholder} />
             </div>
-            <div id='gear-admin-cell'className='nav-row-col'>
-              <div id='login-name'><span>Admin</span></div>
-              <div id='facog'><i className='fa fa-cog fa-2x'></i></div>
+            <div id='weather-cell' className='nav-row-col'>
+              <LocationInputForm />
             </div>
           </div>
         </div>
@@ -71,7 +79,6 @@ export default class App extends Component {
   }
 }
 
-
 App.propTypes = {
-  children: PropTypes.node
+  children: PropTypes.node.isRequired
 }

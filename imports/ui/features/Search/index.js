@@ -56,14 +56,14 @@ export default class Search extends Component {
 
   render () {
     return (
-      <div>
+      <div id='search-div'>
         <form
           id='left-addon'
-          className='pure-form inner-addon width'
+          className='pure-form inner-addon'
           onSubmit={this.handleSubmit}>
           <i className='fa fa-search'></i>
           <input
-            className='pure-input-2-3'
+            className='pure-input-1'
             type='text'
             value={this.state.keyword}
             ref='keywordInput'

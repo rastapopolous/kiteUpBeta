@@ -94,6 +94,7 @@ export default class InviteList extends Component {
             Add client
           </button>
           <input
+            className='txt-input'
             id=''
             type='email'
             autoFocus
@@ -120,7 +121,7 @@ export default class InviteList extends Component {
     return (
       <div>
         <textarea
-          id='txt-input'
+          className='txt-input'
           type='text'
           autoFocus
           value={this.state.message}
@@ -148,7 +149,7 @@ export default class InviteList extends Component {
           </div>
           {this.renderMessageField()}
           <div id='bottom-row'>
-            <div id='confirm-button'>
+            <div>
               <button
                 id='confirm-button'
                 className='pure-button pure-button-primary pure-button-active'

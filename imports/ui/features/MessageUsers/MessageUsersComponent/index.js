@@ -85,10 +85,10 @@ export default class MessageUsersComponent extends Component {
     }
 
     if (this.state.emailList.length !== 0) {
-      alert('sending your email to:' + this.state.emailList)
+      alert(`sending your email to: ${this.state.emailList}`)
       this.setState({ emailList: [] })
     } else {
-      alert('sending your text to:' + this.state.textList)
+      alert(`sending your text to: ${this.state.textList}`)
       this.setState({ textList: [] })
     }
   }

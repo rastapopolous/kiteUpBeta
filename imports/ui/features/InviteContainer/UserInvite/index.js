@@ -1,9 +1,10 @@
 // UserInvite called to generate display email w delete for list to send
 // almost identical to Edwin's UserInvite
 import React, { PropTypes } from 'react'
+import './styles.scss'
 
 const UserInvite = ({ id, email, deleteEmail }) =>
-  <div>
+  <div className='field-input'>
     {email}
     <span onClick={() => deleteEmail(id)}>   X</span>
   </div>
