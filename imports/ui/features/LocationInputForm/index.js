@@ -51,7 +51,7 @@ export default class LocationInputForm extends Component {
             placeholder='   Enter City Name' />
           <button
             id='weather-button' className='pure-button pure-button-active el-spacing'
-            onClick={this.toggleModal}>
+            onClick={this.submitLocation}>
             Get Weather
           </button>
         </form>

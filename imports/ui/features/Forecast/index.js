@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { getWeatherByCity } from '../../../api/Weather'
-import WeatherCard from '../'
-import { link } from 'react-router'
+// import WeatherCard from '../'
+// import { link } from 'react-router'
 
 export default class Forecast extends Component {
   constructor () {
@@ -10,10 +10,8 @@ export default class Forecast extends Component {
       forecast: [],
       loading: false
     }
-    this.consoleState = this.consoleState.bind(this)
     this.createForecast = this.createForecast.bind(this)
   }
-
 
   componentDidMount () {
     getWeatherByCity(this.props.routeParams.location)
@@ -25,10 +23,10 @@ export default class Forecast extends Component {
 
   createForecast (oneDay) {
     const unixStamp = oneDay.dt
-    const location = this.props.routeParams.locatiaon
+    const location = this.props.routeParams.location
     return (
       <link key={unixStamp} to={`/Forecast/${location}/${unixStamp}`}>
-        <WeatherCard cardData={oneDay} />
+      {/* <WeatherCard cardData={oneDay} /> */}
       </link>
     )
   }
