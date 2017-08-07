@@ -14,3 +14,7 @@ export function getWeatherByCity (cityName) {
     axios.get(fullURL)
   )
 }
+
+export function getWeatherPic (iconCode) {
+  return `http://openweathermap.org/img/w/${iconCode}.png`
+}

@@ -1,6 +1,7 @@
 
 #search-div {
-  width: 80%;
+  width: 30%;
+  margin-left: .5em;
 }
 
 /* enable absolute positioning */
@@ -30,9 +31,9 @@
 }
 
 .el-spacing {
- margin: 6px 2px 10px 0px;
+  margin: 6px 2px 10px 0px;
  }
- 
+
 ::-webkit-input-placeholder {
    font-style: italic;
 }

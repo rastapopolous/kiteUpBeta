@@ -1,12 +1,10 @@
 import React, { Component, PropTypes } from 'react'
 import './styles.scss'
 import { IndexLink } from 'react-router'
-import Search from '../Search'
 import InviteContainer from '../InviteContainer'
 import '../InviteContainer/styles.scss'
 import MessageUsers from '../MessageUsers'
 import users from '../../../data/users.js'
-import UserGrid from '../UserGrid'
 import LocationInputForm from '../LocationInputForm'
 
 export default class App extends Component {
@@ -42,14 +40,25 @@ export default class App extends Component {
   // <MessageUsers/> includes visible button that triggers
   // modal w/group send message string via email or txt
   render () {
+    /* const childrenWithMoreProps = React.Children.map(this.props.children, (child) => {
+      if (child.type === UserGrid) {
+        return React.cloneElement(child, {
+          users: this.filteredUsers
+        })
+      } else  {
+        return child
+      }
+    })*/
+
     return (
       <div>
         <div className='header'>
           <div id='nav-top' className='nav-row'>
             <div id='index-cell' className='nav-row-col'>
-              <IndexLink to='/' style={{ textDecoration: 'none', color: 'AliceBlue' }}>
+              <IndexLink
+                to='/' style={{ textDecoration: 'none', color: 'AliceBlue' }}>
                 <span id='index-link'>KiteUp</span>
-              </IndexLink >
+              </IndexLink>
             </div>
           </div>
           <div id='nav-bottom' className='nav-row'>
@@ -60,10 +69,11 @@ export default class App extends Component {
               <InviteContainer />
             </div>
             <div id='search-cell' className='nav-row-col'>
-              <Search
+            {/*   <Search
                 users={this.state.users}
                 updatedFilteredUsers={this.updateUsers}
                 holder={this.state.placeholder} />
+            */}
             </div>
             <div id='weather-cell' className='nav-row-col'>
               <LocationInputForm />
@@ -71,9 +81,9 @@ export default class App extends Component {
           </div>
         </div>
         <div>
-          <UserGrid users={this.state.filteredUsers} />
+          {this.props.children}
         </div>
-        {this.props.children}
+        {/* {childrenWithMoreProps} */}
       </div>
     )
   }

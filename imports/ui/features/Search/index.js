@@ -24,7 +24,6 @@ export default class Search extends Component {
 
   handleSubmit (e) {
     e.preventDefault()
-
     const filteredUsers = this.filterUsers(this.props.users, this.state.keyword)
     this.props.updatedFilteredUsers(filteredUsers)
   }
@@ -63,7 +62,7 @@ export default class Search extends Component {
           onSubmit={this.handleSubmit}>
           <i className='fa fa-search'></i>
           <input
-            className='pure-input-1'
+            className='pure-input-1 new-elspacing'
             type='text'
             value={this.state.keyword}
             ref='keywordInput'

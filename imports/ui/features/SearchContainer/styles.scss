@@ -1,0 +1,10 @@
+#searchBox {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  height: 3em;
+  width: 100%;
+  border-bottom: 2px solid #dce0e5;
+  background: #72BEE6;
+}

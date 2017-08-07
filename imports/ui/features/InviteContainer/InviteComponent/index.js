@@ -60,6 +60,11 @@ export default class InviteList extends Component {
         emailList: newArray,
         email: ''
       })
+      console.log('got another!')
+      console.log(this.state.emailList)
+      //this bit to catch existing emails doesnt seem to catch dupes
+    } else if (match.length !== 0) {
+      console.log(`${email} already exists`)
     }
   }
 
