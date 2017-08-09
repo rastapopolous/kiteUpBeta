@@ -8,8 +8,6 @@ export function getWeatherByCity (cityName) {
   const cityQuery = `q=${cityName}`
   const units = '&units=imperial'
   const fullURL = `${BASE_URL}${cityQuery}${units}&APPID=${APIKEY}&cnt=${COUNT}`
-
-
   return (
     axios.get(fullURL)
   )

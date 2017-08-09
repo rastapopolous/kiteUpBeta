@@ -1,3 +1,11 @@
 .smWeatherCard {
-  
+  margin: 20px;
+  &:hover {
+    color: blue;
+    background-color: gray;
+  }
+}
+.imgDisplay {
+  width: 60%;
+  height: 60%;
 }
