@@ -17,8 +17,8 @@ function WeatherCard ({ cardData, mode }) {
   if (mode === 'small') {
     return (
       <div className='smWeatherCard'>
-        <img className='imgDisplay'src={iconImg} alt={'weather icon'} />
-        <h2>{realDate}</h2>
+        <img className='weather-img' src={iconImg} alt={'weather icon'} />
+        <h2 className='weather-date'>{realDate}</h2>
       </div>
     )
   } else if (mode === 'large') {

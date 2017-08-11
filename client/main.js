@@ -4,6 +4,7 @@ import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 import { Meteor } from 'meteor/meteor'
 import App from '../imports/ui/features/App'
 import Forecast from '../imports/ui/features/Forecast'
+import ForecastDetail from '../imports/ui/features/Forecast/ForecastDetail'
 import SearchContainer from '../imports/ui/features/SearchContainer'
 
 Meteor.startup(() => {
@@ -13,7 +14,7 @@ Meteor.startup(() => {
       <Route path='/' component={App}>
         <IndexRoute component={SearchContainer} />
         <Route path='forecast/:location' component={Forecast} />
-        {/* <Route path='forecast/:location/:day' component={ForecastDetails} />*/}
+        <Route path='forecast/:location/:day' component={ForecastDetail} />
       </Route>
     </Router>
   ),

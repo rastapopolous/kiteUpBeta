@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { getWeatherByCity } from '../../../api/Weather'
 import WeatherCard from '../Weathercard'
 import './styles.scss'
-// import { link } from 'react-router'
+import { Link } from 'react-router'
 
 export default class Forecast extends Component {
   constructor () {
@@ -25,12 +25,12 @@ export default class Forecast extends Component {
 
   createForecast (oneDay) {
     const unixTime = oneDay.dt
-  //  const location = this.props.routeParams.location
+    const location = this.props.routeParams.location
     console.log('oneDay here')
     return (
-    //  <link key={unixTime} to={`/Forecast/${location}/${unixTime}`}>
-      <WeatherCard key={unixTime} mode='small' cardData={oneDay} />
-    //  </link>
+      <Link className='link' key={unixTime} to={`forecast/${location}/${unixTime}`}>
+        <WeatherCard mode='small' cardData={oneDay} />
+      </Link>
     )
   }
 
