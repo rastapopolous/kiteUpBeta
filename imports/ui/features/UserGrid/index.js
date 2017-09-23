@@ -45,7 +45,8 @@ export default class UserGrid extends Component {
       this.props.users.map((user) =>
         <div className='pure-u-lg-1-6 pure-u-md-1-5 pure-u-sm-1-2 pure-u-1-1' key={user._id}>
           <UserCard user={user} onHandleClick={this.toggleModal} />
-        </div>)
+        </div>
+      )
     )
   }
 
