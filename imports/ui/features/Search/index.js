@@ -16,7 +16,6 @@ export default class Search extends Component {
 
   handleChange (e) {
     e.preventDefault()
-
     this.setState({
       keyword: this.refs.keywordInput.value
     })

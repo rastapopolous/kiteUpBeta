@@ -1,9 +1,15 @@
-    // edwin version josh version identical
+
 import React, { PropTypes } from 'react'
 import './styles.scss'
 
-const UserCard = ({ user, onHandleClick }) => {
-  const { _id, firstname, lastname, image, city } = user
+function UserCard ({ user, onHandleClick }) {
+  const {
+    image,
+    firstname,
+    lastname,
+    city,
+    _id
+  } = user
   return (
     <div className='grid-cell' onClick={() => onHandleClick(_id)}>
       <figure>
@@ -14,7 +20,7 @@ const UserCard = ({ user, onHandleClick }) => {
         </figcaption>
       </figure>
     </div>
-  )
+    )
 }
 
 UserCard.propTypes = {

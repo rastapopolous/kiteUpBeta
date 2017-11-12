@@ -35,21 +35,9 @@ export default class App extends Component {
   }
 
   // <search/> searches by object.keys through users object, displays in UserGrid component
-  // <InviteContainer/> includes visible button that triggers
-  // modal w/group send message as string via email or txt
-  // <MessageUsers/> includes visible button that triggers
-  // modal w/group send message string via email or txt
+  // <InviteContainer/>  button that triggers modal w/group send message as string via email or txt
+  // <MessageUsers/> button that triggers  modal w/group send message string via email or txt
   render () {
-    /* const childrenWithMoreProps = React.Children.map(this.props.children, (child) => {
-      if (child.type === UserGrid) {
-        return React.cloneElement(child, {
-          users: this.filteredUsers
-        })
-      } else  {
-        return child
-      }
-    })*/
-
     return (
       <div>
         <div className='header'>
@@ -83,7 +71,6 @@ export default class App extends Component {
         <div>
           {this.props.children}
         </div>
-        {/* {childrenWithMoreProps} */}
       </div>
     )
   }
