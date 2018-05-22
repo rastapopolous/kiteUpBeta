@@ -13,7 +13,6 @@ const weekDays = {
 }
 
 export default class UserProfile extends Component {
-
   constructor () {
     super()
 

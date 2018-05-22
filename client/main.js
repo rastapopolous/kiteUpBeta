@@ -9,15 +9,13 @@ import SearchContainer from '../imports/ui/features/SearchContainer'
 
 Meteor.startup(() => {
   ReactDOM.render(
-    (
     <Router history={browserHistory}>
       <Route path='/' component={App}>
         <IndexRoute component={SearchContainer} />
         <Route path='forecast/:location' component={Forecast} />
         <Route path='forecast/:location/:day' component={ForecastDetail} />
       </Route>
-    </Router>
-  ),
+    </Router>,
     document.getElementById('app')
   )
 })

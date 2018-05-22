@@ -32,6 +32,7 @@ export default class App extends Component {
     this.setState({
       filteredUsers
     })
+    console.log(filteredUsers)
   }
 
   // <search/> searches by object.keys through users object, displays in UserGrid component
@@ -57,11 +58,11 @@ export default class App extends Component {
               <InviteContainer />
             </div>
             <div id='search-cell' className='nav-row-col'>
-            {/*   <Search
+              {/*   <Search
                 users={this.state.users}
                 updatedFilteredUsers={this.updateUsers}
                 holder={this.state.placeholder} />
-            */}
+              */}
             </div>
             <div id='weather-cell' className='nav-row-col'>
               <LocationInputForm />

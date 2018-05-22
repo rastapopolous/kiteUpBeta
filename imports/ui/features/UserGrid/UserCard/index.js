@@ -1,4 +1,3 @@
-
 import React, { PropTypes } from 'react'
 import './styles.scss'
 
@@ -20,7 +19,7 @@ function UserCard ({ user, onHandleClick }) {
         </figcaption>
       </figure>
     </div>
-    )
+  )
 }
 
 UserCard.propTypes = {

@@ -1,6 +1,6 @@
 handleSubmit (e) {
   e.preventDefault()
-  const filteredUsers = this.filterUsers(this.props.users, this.state.keyword)
+  const filteredUsers = this.`filter`Users(this.props.users, this.state.keyword)
   this.props.updatedFilteredUsers(filteredUsers)
 }
 
@@ -27,3 +27,4 @@ filterUsers (users, keyword) {
     })
     return match
   })
+}
