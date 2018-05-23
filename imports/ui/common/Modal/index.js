@@ -1,19 +1,19 @@
 import React, { PropTypes } from 'react'
 import './styles.scss'
 
-const Modal = ({ isOpen, handleClose, height, width, children }) => {
-  const modal = {
-    display: '',
-    height,
-    width
+const Modal = ({ isOpen, handleClose, children }) => {
+  const modalBg = {
+    display: ''
   }
-  modal.display = isOpen === true ? 'inline-block' : 'none'
+  if (isOpen) {
+    modalBg.display = 'block'
+  } else {
+    modalBg.display = 'none'
+  }
   return (
-    <div className='modal-overlay' style={{ display: modal.display }}>
-      <div className='modal' style={{ height: modal.height, width: modal.width }}>
-        <div className='modal-guts'>
-          {children}
-        </div>
+    <div className='modal' style={modalBg}>
+      <div className='modalBox'>
+        {children}
         <span className='close' onClick={() => handleClose(null)}>X</span>
       </div>
     </div>
@@ -26,11 +26,6 @@ Modal.propTypes = {
   children: PropTypes.object.isRequired,
   height: PropTypes.string,
   width: PropTypes.string
-}
-
-Modal.defaultProps = {
-  height: '75%',
-  width: '60%'
 }
 
 export default Modal
