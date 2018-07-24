@@ -21,7 +21,6 @@ export default class SearchContainer extends Component {
     this.setState({
       filteredUsers
     })
-    console.log('THIS'+this.state.filteredUsers)
   }
 
   render () {

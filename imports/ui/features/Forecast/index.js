@@ -17,7 +17,6 @@ export default class Forecast extends Component {
   componentDidMount () {
     getWeatherByCity(this.props.routeParams.location)
       .then(weatherData => {
-        console.log(weatherData)
         const data = weatherData.data.list
         this.setState({ forecast: data })
       })
@@ -26,7 +25,6 @@ export default class Forecast extends Component {
   createForecast (oneDay) {
     const unixTime = oneDay.dt
     const location = this.props.routeParams.location
-    console.log('oneDay here')
     return (
       <Link className='link' key={unixTime} to={`forecast/${location}/${unixTime}`}>
         <WeatherCard mode='small' cardData={oneDay} />

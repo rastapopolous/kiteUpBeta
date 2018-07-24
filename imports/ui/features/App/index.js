@@ -32,7 +32,6 @@ export default class App extends Component {
     this.setState({
       filteredUsers
     })
-    console.log(filteredUsers)
   }
 
   // <search/> searches by object.keys through users object, displays in UserGrid component
